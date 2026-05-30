@@ -28,6 +28,10 @@
   from, to { border-color: transparent; }
     50% { border-color: #89d921; }
 }
+.part-ground{
+    position: relative;
+    overflow: hidden;
+}
 h3{
     text-align: center;
     color: rgb(200, 214, 196);
@@ -35,7 +39,6 @@ h3{
     text-shadow: 0 0 8px rgb(185, 159, 159);
     font-size: 170%;
 }
-
 .home-pack{
     background-image: url('suns.jpg');
     background-repeat: no-repeat; 
@@ -53,6 +56,7 @@ h3{
     align-items: center;
     text-align: center;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.852);
+    position: relative;
 }
 @import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
 .login-form label{
@@ -65,11 +69,16 @@ h3{
     font-size: 18px;
     padding: 1%;
     transition: all 0.3s ease;
+    
 }
 .login-form input{
+    font-size: 120%;
+    color: white;
+    background: transparent;
+    border: none;
     width: 75%;
     padding: 12px 16px;
-    border: 2px solid rgba(116, 111, 111, 0.338);
+    border: 2px solid rgba(123, 116, 116, 0.338);
     border-radius: 8px;
     margin: 2px 5px;
     transition: 0.3s;
@@ -78,7 +87,7 @@ h3{
 .login-form input:focus{
     border-color: rgb(31, 105, 105);
     outline: none;
-    border: 2px solid rgb(45, 216, 39);
+    border: none;
     box-shadow: 0 0 rgb(123, 14, 123);
 }
 .login-form input:hover{
@@ -115,6 +124,37 @@ h3{
     cursor: pointer;
     transform: scale(1.2);
 }
+.scroll-item{
+    margin: 5% auto;
+    overflow: hidden;
+    width: 90%;
+}
+.scroll-line{
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 0 rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    margin: 1% 5%;
+    width: max-content;
+    animation: scroll 20s  linear infinite;
+    transition: 0.5s;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 150%;
+    text-shadow: 0 0 8px rgb(255, 255, 255);
+}
+.scroll-line:hover{
+    cursor: pointer ;
+    transform: scale(1.2);
+}
+.item-roll{
+    font-size: 150%;
+    margin-left: 2rem;
+}
+@keyframes scroll{
+    to{
+        transform: translateX(-50%);
+    }
+}
 .box-center{
     display: flex;
     justify-content: center;
@@ -144,7 +184,8 @@ h3{
     cursor: pointer;
 }
 .item-about{
-    background-image: url('menu.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+              url('image.png');   
     background-repeat: no-repeat; 
     background-size: cover;        
     background-position: center;   
@@ -161,12 +202,14 @@ h3{
     width: 100%;
 }
 .about-cent a{
+    
     text-decoration: none;
+    text-shadow:0 0 8px whitesmoke;
     font-size: 120%;
-    color: rgb(0, 0, 0);
-    background-color: rgb(248, 252, 254);
-    margin: 2% 5%;
-    padding: 5px 15px;
+    color: rgb(249, 241, 241);
+    background-color: rgba(85, 88, 89, 0.255);
+    margin: 3% ;
+    padding: 10px 20px;
     border: 2px solid rgb(210, 210, 210);
     border-radius: 20px;
     width: fit-content;
@@ -179,13 +222,127 @@ h3{
     cursor: pointer;
     transform: scale(1.2);
 }
+.letter-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.letter-wrap{
+    display: inline-block;
+    justify-content: center;
+}
+.p-letter{
+    margin-top: 2%;
+    text-shadow: 0 0 10px  rgb(174, 147, 147);
+    color: rgb(191, 166, 253);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 35px;
+    white-space: nowrap;  
+    overflow: hidden;         
+    border-right: 3px solid #d278d8;
+    animation: 
+    typing 15s steps(75) infinite forwards, 
+    blink 0.85s  
+}
+.text-center{
+    text-align: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    color: #a3c1de;
+    text-shadow:0 0 8px #f5f4f5;
+}
+.control-image{
+    background-color: rgba(78, 83, 88, 0.842);
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 50px;
+    margin: 100px;
+    padding-top: 10px;
+    border-radius: 10px;
+}
+.edit-image{
+    background-color: #7a747a79;
+    box-shadow:0 0 10px #0bf690b9;
+    width: 60px;
+    border-radius: 10px;
+    padding: 3px;
+    transition: 0.5s;
+}
+.edit-image:hover{
+    cursor: pointer;
+    transform: scale(1.5);
+}
+.edit-css{
+    background-color: #80798160;
+    width: 80px;
+    border-radius: 10px;
+    border: none;
+    box-shadow:0 0 10px #1dffddb4;
+    padding: 3px;
+    transition: 0.5s;
+}
+.edit-css:hover{
+    cursor: pointer;
+    transform: scale(1.5);
+}
+.edit-c{
+    background-color: #575e6b8b;
+    width: 70px;
+    box-shadow:0 0 8px #89d921;
+    padding: 3px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.edit-c:hover{
+    cursor: pointer;
+    transform: scale(1.5);
+}
+.edit-react{
+    background-color: #575e6b8b;
+    width: 90px;
+    box-shadow:0 0 8px #89d921;
+    padding: 3px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.edit-react:hover{
+    cursor: pointer;
+    transform: scale(1.5);
+}
+.under-scroll{
+    margin: 5% auto;
+    overflow: hidden;
+    width: 90%;
+}
+.form-work{
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 0 rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    margin: 1% 5%;
+    width: max-content;
+    animation: scroll 20s  linear infinite;
+    transition: 0.3s;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 150%;
+    text-shadow: 0 0 8px rgb(255, 255, 255);
+}
+.scroll-letter{
+    font-size: 150%;
+    margin-left: 2rem;
+}
+.find-background{
+    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+}
 .find-item{
-    
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2px;
 }
+#FIND 
 .find-item a{
     text-decoration: none;
     font-family: 'Times New Roman', Times, serif;
@@ -229,35 +386,4 @@ h3{
 
     cursor: pointer;
     transform: scale(1.2);
-}
-.scroll-item{
-    margin: 5% auto;
-    overflow: hidden;
-    width: 90%;
-}
-.scroll-line{
-    color: rgb(255, 255, 255);
-    box-shadow: 0 0 0 rgb(0, 0, 0);
-    display: flex;
-    align-items: center;
-    margin: 1% 5%;
-    width: max-content;
-    animation: scroll 20s  linear infinite;
-    transition: 0.3s;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 150%;
-    text-shadow: 0 0 8px rgb(245, 245, 245);
-}
-.scroll-line:hover{
-    cursor: pointer ;
-    transform: scale(1.2);
-}
-.item-roll{
-    font-size: 150%;
-    margin-left: 2rem;
-}
-@keyframes scroll{
-    to{
-        transform: translateX(-50%);
-    }
 }
